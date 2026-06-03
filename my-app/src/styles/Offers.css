@@ -1,0 +1,429 @@
+/* =========================================
+   OFFERS SECTION
+========================================= */
+
+.offers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.offers__card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: clamp(240px, 40vw, 300px);
+
+  padding: clamp(1.5rem, 3vw, 2rem);
+
+  border-radius: clamp(20px, 4vw, 34px);
+
+  isolation: isolate;
+
+  display: flex;
+  align-items: flex-end;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+}
+
+/* Glow Overlay */
+.offers__card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 30%
+  );
+
+  opacity: 0;
+
+  transition: 0.45s ease;
+
+  z-index: 1;
+}
+
+/* Hover */
+.offers__card:hover {
+  transform: translateY(-12px) scale(1.02);
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.offers__card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================
+   BACKGROUNDS
+========================================= */
+
+/* Playstation */
+.offers__card--dark {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0, 112, 209, 0.3),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #07111f, #0a1a30 55%, #111827);
+}
+
+/* Steam */
+.offers__card--navy {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(102, 192, 244, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #09131f, #162534 60%, #1b2838);
+}
+
+/* Xbox */
+.offers__card--rust {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(16, 185, 129, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #061712, #0d2a23 55%, #11332a);
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.offers__badge {
+  position: absolute;
+
+  top: clamp(12px, 2vw, 18px);
+  right: clamp(12px, 2vw, 18px);
+
+  height: clamp(30px, 5vw, 36px);
+
+  padding-inline: clamp(10px, 2vw, 14px);
+
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #f97316, #ea580c);
+
+  color: white;
+
+  font-size: clamp(10px, 1.2vw, 12px);
+  font-weight: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.3);
+
+  z-index: 4;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.offers__content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Mini title */
+.offers__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  height: clamp(24px, 4vw, 30px);
+
+  padding-inline: clamp(10px, 2vw, 12px);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: clamp(10px, 1.2vw, 11px);
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+
+  backdrop-filter: blur(10px);
+}
+
+/* Title */
+.offers__title {
+  font-size: clamp(22px, 4vw, 32px);
+
+  font-weight: 900;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+
+  color: white;
+
+  margin-bottom: clamp(0.5rem, 1.5vw, 0.9rem);
+
+  max-width: clamp(260px, 80vw, 320px);
+}
+
+/* Description */
+.offers__desc {
+  font-size: clamp(13px, 1.5vw, 15px);
+
+  color: rgba(255, 255, 255, 0.72);
+
+  line-height: 1.8;
+
+  margin-bottom: clamp(1rem, 2vw, 1.8rem);
+
+  max-width: clamp(240px, 80vw, 280px);
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.offers__cta {
+  position: relative;
+
+  overflow: hidden;
+
+  height: clamp(44px, 6vw, 52px);
+
+  padding-inline: clamp(16px, 3vw, 22px);
+
+  border-radius: clamp(14px, 2vw, 18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: clamp(12px, 1.3vw, 14px);
+  font-weight: 800;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1vw, 10px);
+
+  backdrop-filter: blur(14px);
+
+  transition: 0.35s ease;
+}
+
+/* shine */
+.offers__cta::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: 0.65s ease;
+}
+
+.offers__cta:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.offers__cta:hover::before {
+  left: 140%;
+}
+
+/* icon */
+.offers__cta i {
+  font-size: clamp(14px, 1.5vw, 16px);
+
+  transition: 0.35s ease;
+}
+
+.offers__cta:hover i {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   HUGE BACKGROUND TEXT
+========================================= */
+
+.offers__bg-text {
+  position: absolute;
+
+  left: -18px;
+  bottom: -40px;
+
+  font-size: clamp(100px, 20vw, 180px);
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -10px;
+
+  color: rgba(255, 255, 255, 0.04);
+
+  user-select: none;
+
+  z-index: 0;
+
+  transition: 0.45s ease;
+}
+
+/* animate bg text */
+.offers__card:hover .offers__bg-text {
+  transform: translateY(-6px) scale(1.03);
+
+  color: rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================
+   FLOATING GLOW
+========================================= */
+
+.offers__card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 999px;
+
+  filter: blur(90px);
+
+  opacity: 0.15;
+
+  z-index: 0;
+}
+
+.offers__card--dark::after {
+  top: -100px;
+  right: -40px;
+
+  background: #0070d1;
+}
+
+.offers__card--navy::after {
+  top: -100px;
+  right: -40px;
+
+  background: #66c0f4;
+}
+
+.offers__card--rust::after {
+  top: -100px;
+  right: -40px;
+
+  background: #10b981;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .offers__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .offers__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .offers__card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .offers__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .offers__card:last-child {
+    grid-column: auto;
+  }
+
+  .offers__card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .offers__grid {
+    gap: 12px;
+  }
+
+  .offers__card {
+    padding: 1.25rem;
+    min-height: 200px;
+  }
+
+  .offers__bg-text {
+    font-size: 80px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .offers__card {
+    padding: 1rem;
+    min-height: 180px;
+    border-radius: 18px;
+  }
+
+  .offers__bg-text {
+    font-size: 60px;
+    bottom: -15px;
+  }
+}

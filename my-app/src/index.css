@@ -1,0 +1,169 @@
+/* =========================================================
+   GLOBAL DESIGN SYSTEM — RESPONSIVE EDITION
+   ========================================================= */
+
+/* FONT */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap");
+
+/* =========================================================
+   ROOT TOKENS
+   ========================================================= */
+
+:root {
+  /* COLORS */
+
+  --bg: #06070a;
+  --bg-2: #0e1016;
+
+  --white: #ffffff;
+
+  --ink-1: #f8fafc;
+  --ink-2: #d6d9e0;
+    --ink-3: #57595e;
+
+
+  --muted-1: #9ca3af;
+  --muted-2: #6b7280;
+
+  --line: rgba(255, 255, 255, 0.08);
+
+  --accent: #8b5cf6;
+  --accent-2: #6d28d9;
+
+  --accent-light: rgba(139, 92, 246, 0.12);
+
+  --accent-border: rgba(139, 92, 246, 0.25);
+
+  --warm: #f97316;
+
+  /* RADIUS */
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+
+  /* SHADOWS */
+
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  /* FONT SIZES */
+  --fs-xs: clamp(11px, 1vw, 12px);
+  --fs-sm: clamp(12px, 1.2vw, 13px);
+  --fs-base: clamp(13px, 1.5vw, 14px);
+  --fs-md: clamp(14px, 1.8vw, 15px);
+  --fs-lg: clamp(16px, 2vw, 18px);
+  --fs-xl: clamp(18px, 2.5vw, 20px);
+  --fs-2xl: clamp(20px, 3vw, 24px);
+  --fs-3xl: clamp(28px, 4vw, 42px);
+  --fs-4xl: clamp(38px, 6vw, 64px);
+
+  /* SPACING */
+  --sp-xs: clamp(4px, 1vw, 6px);
+  --sp-sm: clamp(8px, 1.5vw, 12px);
+  --sp-md: clamp(12px, 2vw, 16px);
+  --sp-lg: clamp(16px, 2.5vw, 24px);
+  --sp-xl: clamp(24px, 3vw, 32px);
+  --sp-2xl: clamp(32px, 4vw, 48px);
+
+  /* FONT */
+
+  --font: "Cairo", sans-serif;
+
+  /* TRANSITIONS */
+
+  --t-fast: 0.2s ease;
+  --t-normal: 0.35s ease;
+  --t-slow: 0.5s ease;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  direction: rtl;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139, 92, 246, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(6, 182, 212, 0.06),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--ink-1);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: var(--font);
+}
+
+input,
+textarea,
+select {
+  color: var(--ink-1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted-2);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+#root {
+  min-height: 100vh;
+}

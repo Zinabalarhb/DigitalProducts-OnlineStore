@@ -1,0 +1,212 @@
+/* =========================================
+   PREMIUM TICKER
+========================================= */
+
+.ticker {
+  position: relative;
+
+  overflow: hidden;
+
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(
+    90deg,
+    rgba(10, 12, 18, 0.96),
+    rgba(16, 20, 30, 0.98),
+    rgba(10, 12, 18, 0.96)
+  );
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  z-index: 1;
+}
+
+/* =========================================
+   TRACK
+========================================= */
+
+.ticker__track {
+  display: flex;
+  align-items: center;
+
+  gap: 4rem;
+
+  width: max-content;
+
+  animation: premiumTicker 28s linear infinite;
+}
+
+@keyframes premiumTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker:hover .ticker__track {
+  animation-play-state: paused;
+}
+
+/* =========================================
+   ITEM
+========================================= */
+
+.ticker__item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  white-space: nowrap;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.35s ease;
+}
+
+.ticker__item:hover {
+  color: white;
+}
+
+/* =========================================
+   DOT
+========================================= */
+
+.ticker__dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  flex-shrink: 0;
+
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.8);
+}
+
+/* =========================================
+   EDGE FADES
+========================================= */
+
+.ticker::before,
+.ticker::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  width: 120px;
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.ticker::before {
+  right: 0;
+
+  background: linear-gradient(to left, #09090b, transparent);
+}
+
+.ticker::after {
+  left: 0;
+
+  background: linear-gradient(to right, #09090b, transparent);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .ticker {
+    height: 48px;
+  }
+
+  .ticker__track {
+    gap: 3rem;
+  }
+
+  .ticker__item {
+    font-size: 12px;
+  }
+
+  .ticker::before,
+  .ticker::after {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ticker {
+    height: 44px;
+  }
+
+  .ticker__track {
+    gap: 2rem;
+  }
+
+  .ticker__item {
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .ticker::before,
+  .ticker::after {
+    width: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ticker {
+    height: 40px;
+  }
+
+  .ticker__item {
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .ticker__dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .ticker::before,
+  .ticker::after {
+    width: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ticker {
+    height: 36px;
+  }
+
+  .ticker__track {
+    gap: 1.5rem;
+  }
+
+  .ticker__item {
+    font-size: 9px;
+  }
+
+  .ticker__dot {
+    width: 4px;
+    height: 4px;
+  }
+}
