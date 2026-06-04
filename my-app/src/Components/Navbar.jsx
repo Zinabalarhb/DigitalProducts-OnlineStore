@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "../Contexts/CartContext";
 
 import {
   ShoppingCart,
@@ -140,7 +140,7 @@ export default function Navbar() {
 
         {/* Register */}
         <button
-          className="ui-btn ui-btn--primary"
+          className="ui-btn ui-btn--primary na"
           onClick={() => navigate("/register")}
         >
           إنشاء حساب

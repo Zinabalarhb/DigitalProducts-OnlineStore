@@ -1,4 +1,5 @@
 import "../styles/Hero.css";
+import { Link } from "react-router-dom";
 
 const STATS = [
   { value: "+١٠٠k", label: "عميل سعيد"     },
@@ -32,14 +33,20 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="hero__actions">
-          <button className="btn btn--primary btn--lg">
+          <Link
+            to="/products"
+            className="btn btn--primary btn--lg"
+          >
             <i className="ti ti-shopping-bag" aria-hidden="true" />
             تصفح المنتجات
-          </button>
-          <button className="btn btn--ghost btn--lg">
+          </Link>
+          <Link
+            to="/Offers"
+            className="btn btn--ghost btn--lg"
+          >
             <i className="ti ti-tag" aria-hidden="true" />
             العروض الحالية
-          </button>
+          </Link>
         </div>
 
         {/* Stats */}

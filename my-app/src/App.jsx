@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./contexts/CartContext";
+import { CartProvider } from "./Contexts/CartContext";
 
 import PublicLayout from "./Layouts/PublicLayout";
 
@@ -10,13 +10,15 @@ import ProductDetailsPage from "./Pages/ProductDetailsPage";
 import CartPage from "./Pages/CartPage";
 import CheckoutPage from "./Pages/CheckoutPage";
 
+import Offers from  "./Components/Offers";
+
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 
 export default function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
+<BrowserRouter basename="/DigitalProducts-OnlineStore"> 
         <Routes>
 
           <Route path="/" element={<PublicLayout />}>
@@ -27,6 +29,7 @@ export default function App() {
             {/* 🛍️ Pages */}
             <Route path="products" element={<ProductsPage />} />
             <Route path="product/:id" element={<ProductDetailsPage />} />
+      <Route path="/offers" element={<Offers />} />
 
             <Route path="cart" element={<CartPage />} />
             <Route path="checkout" element={<CheckoutPage />} />

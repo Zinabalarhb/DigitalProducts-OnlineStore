@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "../Contexts/CartContext";
 import "../styles/Checkout.css";
 
 export default function CheckoutPage() {

@@ -1,6 +1,6 @@
 import { Trash2, Plus, Minus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "../Contexts/CartContext";
 import "../styles/Cart.css";
 
 export default function CartPage() {

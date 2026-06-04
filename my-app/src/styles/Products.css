@@ -482,36 +482,19 @@
 .products-empty p {
   color: #9ca3af;
 }
-
-/* ==========================================
-   MOBILE
+ /* ==========================================
+   RESPONSIVE - TABLET
 ========================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
-  .product-card__actions {
-    flex-direction: column;
+  .products__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
 
-  .product-card__details,
-  .product-card__add {
-    width: 100%;
-  }
-
-}
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-  .products__trust,
-  .products__cats {
-    justify-content: center;
-  }
-
-  .product-card__name {
-    font-size: 15px;
+  .product-card__thumb {
+    height: 190px;
   }
 
   .product-card__price {
@@ -519,12 +502,129 @@
   }
 }
 
-@media (max-width: 520px) {
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .products-section {
+    padding-bottom: 40px;
+  }
+
+  .products__trust {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .products__trust span {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .products__cats {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .products__cat {
+    height: 40px;
+    padding-inline: 16px;
+    font-size: 12px;
+  }
+
   .products__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-card {
+    border-radius: 20px;
   }
 
   .product-card__thumb {
     height: 180px;
+  }
+
+  .product-card__thumb span {
+    font-size: 48px;
+  }
+
+  .product-card__body {
+    padding: 1rem;
+  }
+
+  .product-card__name {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .product-card__desc {
+    font-size: 12px;
+    min-height: auto;
+  }
+
+  .product-card__meta {
+    gap: 10px;
+  }
+
+  .product-card__sales {
+    font-size: 11px;
+  }
+
+  .product-card__price {
+    font-size: 24px;
+  }
+
+  .product-card__old {
+    font-size: 12px;
+  }
+
+  .product-card__add {
+    height: 46px;
+    margin: 0 1rem 1rem;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+  .products__grid {
+    gap: 14px;
+  }
+
+  .product-card {
+    border-radius: 18px;
+  }
+
+  .product-card__thumb {
+    height: 160px;
+  }
+
+  .product-card__thumb span {
+    font-size: 42px;
+  }
+
+  .product-card__name {
+    font-size: 14px;
+  }
+
+  .product-card__price {
+    font-size: 22px;
+  }
+
+  .product-card__add {
+    height: 44px;
+    font-size: 12px;
+  }
+
+  .product-card__hot,
+  .product-card__disc {
+    font-size: 10px;
+    padding: 5px 8px;
   }
 }

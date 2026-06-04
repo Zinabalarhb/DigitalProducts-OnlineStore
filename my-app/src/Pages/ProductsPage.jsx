@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../contexts/CartContext";
+import { useCart } from "../Contexts/CartContext";
 import "../styles/Products.css";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../Components/SearchBar"; 
 
 const CATS = [
   { key: "all", label: "الكل" },
